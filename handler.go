@@ -5,8 +5,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/boltdb/bolt"
-	"github.com/boltdb/boltd/templates"
+	"github.com/itomsawyer/boltd/templates"
+	bolt "go.etcd.io/bbolt"
 )
 
 // NewHandler returns a new root HTTP handler.

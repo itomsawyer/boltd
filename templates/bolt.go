@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"unsafe"
 
-	"github.com/boltdb/bolt"
+	bolt "go.etcd.io/bbolt"
 )
 
 const pageHeaderSize = int(unsafe.Offsetof(((*page)(nil)).ptr))

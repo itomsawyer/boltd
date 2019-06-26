@@ -11,7 +11,7 @@ better understand how Bolt is laying out your data.
 To install boltd, use the `go get` command:
 
 ```sh
-$ go get github.com/boltdb/boltd/...
+$ go get github.com/itomsawyer/boltd/...
 ```
 
 And then run the `boltd` binary by passing in the path to your database:
