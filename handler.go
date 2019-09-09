@@ -5,6 +5,7 @@ import (
 	"strconv"
 	"strings"
 
+	"github.com/gin-gonic/gin"
 	"github.com/itomsawyer/boltd/templates"
 	bolt "go.etcd.io/bbolt"
 )
@@ -16,6 +17,13 @@ func NewHandler(db *bolt.DB) http.Handler {
 	mux.HandleFunc("/", h.index)
 	mux.HandleFunc("/page", h.page)
 	return mux
+}
+
+func NewGinHandler(db *bolt.DB) gin.HandlerFunc {
+	h := &handler{db}
+	return func(c *gin.Context) {
+		h.page(c.Writer, c.Request)
+	}
 }
 
 type handler struct {
